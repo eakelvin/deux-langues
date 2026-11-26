@@ -1,37 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeuxLangues
 
-## Getting Started
+A quiet place to practice French. The site opens on one Today screen and walks through the day’s practice in order, so there is nothing to decide.
 
-First, run the development server:
+Learning content is in French. The interface is in English.
+
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Today
 
-## Learn More
+Three steps, in order. A day counts once at least one step is finished. The streak and the progress bar update as you go. A missed day resets quietly.
 
-To learn more about Next.js, take a look at the following resources:
+1. **Topic and writing.** One French topic (sample: remote work, C1). Write up to five lines, then see each sentence beside a correction and a short reason, plus a full corrected version. The sample text has real notes. Anything else shows the layout only.
+2. **Mimic.** A short French passage, key expressions, a Listen button (French voice through the browser), and a recorder so you can play your take next to the original.
+3. **Conversation.** A spoken-chat shape with two role-play scenes (restaurant, clothes shop). Lines are samples. The partner replies in text and voice, and corrections appear only after you finish.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Also on the menu
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Notebook.** Phrases from the sample practice, with the correction, an example, the date, and a practiced count. Mark items learned, or review the ones still open.
+- **Progress.** One metric: filler words per minute (`euh`, `ben`, `bah`, `tu vois`, `enfin`), drawn as a line from the first sample recording to the latest.
 
-## Deploy on Vercel
+## How it’s built
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# deux-langues
+Next.js (App Router), TypeScript, Tailwind CSS, and shadcn/ui. Everything currently lives in the browser. Sample topics, corrections, scenes, notebook entries, and progress points are in `lib/data.tsx`. Nothing is saved yet, and there is no model behind the corrections or the conversation.
